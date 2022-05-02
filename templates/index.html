@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+  <head>
+  <meta charset="UTF-8">
+  <title>HEART DISEASE PREDICTION</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="login">
+	  <h1>Prediction for heart disease</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+	  <input type="text" name="Age" placeholder="Age (in years)" required="required" />
+    <input type="text" name="Sex" placeholder="Sex" required="required" />
+    <input type="text" name="Chest Pain Type" placeholder="Chest Pain Type" required="required" />
+    <input type="text" name="Resting BP" placeholder="Resting BP" required="required" />
+    <input type="text" name="Cholesterol" placeholder="Cholesterol" required="required" />
+    <input type="text" name="Fasting BS" placeholder="Fasting BS" required="required" />
+    <input type="text" name="Resting ECG" placeholder="Resting ECG" required="required" />
+    <input type="text" name="Max HR" placeholder="Max HR" required="required" />
+    <input type="text" name="Exercise Angina" placeholder="Exercise Angina" required="required" />
+    <input type="text" name="Old peak" placeholder="Old peak" required="required" />
+  	<input type="text" name="S T Slope" placeholder="S T Slope" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+</div>
+<div class="info">
+  <h3>information for input field entry</h3>
+  <ul>
+    <li>for Sex: male=1, femlae=0</li>
+    <li>for chest pain type: ASY=0, ATA=1, NAP=2, TA=3</li>
+    <li>For resting ecg: LVH=0,Normal=1 ,ST=2</li>
+    <li>for Exercise Angina: N=0, Y=1</li>
+    <li>for S T Slope: Down=0, Flat=1, Up=2</li>
+    <li>Heart disease: 1=YES, 0=NO</li>
+  </ul>
+
+</div>
+
+
+</body>
+</html>
